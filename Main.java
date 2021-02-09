@@ -8,10 +8,19 @@ class Main {
     int money = scan.nextInt();
 
     System.out.println("How much candy do you want to buy ");
-    int candy = scan.nextInt();
+    int candies = scan.nextInt();
 
-    System.out.println(candy(change));
+    System.out.println(candy(money, candies));
+    
+    System.out.println("How many people are seated");
+    int chairs = scan.nextInt();
+    
+    System.out.println("How many seats are left?");
+    int openChairs = scan.nextInt();
+    
+    System.out.println(seats(chairs, openChairs));
   }
+  
   static double candy(double numDollars, int numCandy)
      {
       double c = 3 * numCandy ;
@@ -19,9 +28,11 @@ class Main {
 
       return change;
      }
-   static int seats(int num1, int num2)
+   static int seats(int numTables, int numSeats)
   {
-      return num1 + num2;
+    int t = 5 * numTables;
+    int openSeats  = numSeats - t;
+      return openSeats;
   }
      
   }
